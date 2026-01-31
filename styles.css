@@ -40,7 +40,8 @@ background-color : lightblue;
     color: #3A86FF;
 }
 .hero {
-    height: 90vh;
+    height: auto;
+    padding : 60px 20px;
     background: linear-gradient(to right, #1B263B, #3A86FF);
     display: flex;
     align-items: center;
