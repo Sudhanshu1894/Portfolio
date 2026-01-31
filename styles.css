@@ -281,6 +281,78 @@ background-color : lightblue;
     line-height: 60px; /* Centers text vertically */
     font-size: 14px;
 }
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets (screen width ≤ 992px) */
+@media (max-width: 992px) {
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left, .hero-right {
+    width: 100%;
+  }
+
+  .about-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .skills-container,
+  .projects-container {
+    width: 90%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones (screen width ≤ 600px) */
+@media (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-left h1 {
+    font-size: 34px;
+  }
+
+  .hero-left p {
+    font-size: 15px;
+  }
+
+  .hero-right img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container {
+    gap: 20px;
+  }
+
+  .contact-container {
+    width: 90%;
+  }
+}
 
 
 
