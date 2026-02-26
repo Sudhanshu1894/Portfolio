@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Sudhanshu Singh | Portfolio</title>
+    <meta name="title" content="Sudhanshu Singh | Portfolio">
+    <meta name="description" content="Computer Science Engineering student specializing in AI, Robotics, and Full-Stack Development.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sudhanshu-portfolio.vercel.app/"> <meta property="og:title" content="Sudhanshu Singh | Portfolio">
+    <meta property="og:description" content="Building dynamic web experiences and intelligent systems.">
+    <meta property="og:image" content=""> 
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">&lt;Sudhanshu /&gt;</div>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="Sudhanshu_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary mobile-resume">Resume</a></li>
         </ul>
-        <a href="Sudhanshu_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">Resume</a>
+        <a href="Sudhanshu_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary desktop-resume">Resume</a>
     </nav>
 
     <section class="hero">
+        <div id="particles-js"></div> 
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Sudhanshu Singh</span>.</h1>
             <p class="typing-container">I specialize in <span id="typing-text" class="highlight"></span><span class="cursor">|</span></p>
@@ -41,53 +60,54 @@
             <button class="tech-btn"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></button>
             <button class="tech-btn"><i class="devicon-figma-plain colored"></i><span>UI/UX</span></button>
         </div>
+        
+        <div class="github-stats hidden" style="margin-top: 4rem; text-align: center;">
+            <a href="https://github.com/Sudhanshu1894" target="_blank" rel="noopener noreferrer">
+                <img src="https://github-readme-stats.vercel.app/api?username=Sudhanshu1894&show_icons=true&theme=react&hide_border=true&bg_color=1E293B&title_color=06B6D4&text_color=F8FAFC&icon_color=06B6D4" alt="Sudhanshu's Live GitHub Stats" style="max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            </a>
+        </div>
     </section>
+
     <section id="about" class="about-section">
         <h2 class="hidden">System Status</h2>
         <div class="terminal-window hidden">
             <div class="terminal-header">
                 <div class="terminal-buttons">
-                    <span class="close"></span>
-                    <span class="minimize"></span>
-                    <span class="maximize"></span>
+                    <span class="close"></span><span class="minimize"></span><span class="maximize"></span>
                 </div>
                 <div class="terminal-title">sudhanshu@portfolio:~</div>
             </div>
             <div class="terminal-body">
                 <p><span class="prompt">sudhanshu@vit-chennai:~$</span> whoami</p>
                 <p class="output">Sudhanshu Singh. Computer Science Engineering student specializing in AI & Robotics.</p>
-                
                 <p><span class="prompt">sudhanshu@vit-chennai:~$</span> cat core_interests.txt</p>
                 <p class="output">Computer Architecture, Operating Systems, Data Structures, MERN Stack, Hardware Integration.</p>
-
                 <p><span class="prompt">sudhanshu@vit-chennai:~$</span> ./execute_vision.sh</p>
                 <p class="output text-glow">"Bridging the gap between intelligent software and physical systems."</p>
-                
                 <p><span class="prompt">sudhanshu@vit-chennai:~$</span> <span class="cursor">|</span></p>
             </div>
         </div>
     </section>
+
     <section id="projects" class="projects-section">
         <h2 class="hidden">Featured Case Studies</h2>
         
-        <div class="project-card hidden">
+        <div class="project-card hidden" onclick="openModal('stasis-modal')">
             <div class="project-info">
                 <h3>Stasis</h3>
-                <p>A full-stack digital time-capsule application.</p>
+                <p>A full-stack digital time-capsule application. Click to view architecture.</p>
                 <div class="tags">
-                    <span class="tag">MERN Stack</span>
-                    <span class="tag">Web Dev</span>
+                    <span class="tag">MERN Stack</span><span class="tag">Web Dev</span>
                 </div>
             </div>
         </div>
         
-        <div class="project-card reverse hidden">
+        <div class="project-card reverse hidden" onclick="openModal('mesh-modal')">
             <div class="project-info">
                 <h3>Disaster Management Mesh Network</h3>
-                <p>Java-based routing and range extension for emergency communication.</p>
+                <p>Java-based routing and range extension for emergency communication. Click to view details.</p>
                 <div class="tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Systems Architecture</span>
+                    <span class="tag">Java</span><span class="tag">Systems Architecture</span>
                 </div>
             </div>
         </div>
@@ -96,41 +116,66 @@
     <section id="experience" class="leadership-section">
         <h2 class="hidden">Leadership & Community</h2>
         <div class="leadership-grid">
-            
             <div class="lead-card hidden">
                 <div class="lead-icon"><i class="devicon-microsoft-windows8-plain colored"></i></div>
                 <h3>Microsoft Innovations Club</h3>
                 <span class="lead-role">Active Member / Designer</span>
                 <p>Contributing to the club's visual presence by designing promotional materials, Instagram grids, and event collateral.</p>
             </div>
-
             <div class="lead-card hidden">
                 <div class="lead-icon">🎲</div>
                 <h3>VITpoly Event Organizer</h3>
                 <span class="lead-role">Event Management</span>
                 <p>Conceptualized and organized a large-scale Monopoly-themed campus event, handling logistics, poster design, and team coordination.</p>
             </div>
-
             <div class="lead-card hidden">
                 <div class="lead-icon">🛠️</div>
                 <h3>Student Tool Development</h3>
                 <span class="lead-role">Developer</span>
                 <p>Built a comprehensive CGPA calculator tailored for university students to track current grades and forecast target milestones.</p>
             </div>
-
         </div>
     </section>
+
+    <div id="stasis-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('stasis-modal')">&times;</span>
+            <h2>Stasis: Digital Time Capsule</h2>
+            <p><strong>Problem:</strong> Creating a secure, reliable way for users to send messages to their future selves.</p>
+            <p><strong>Architecture:</strong> Built using the MERN stack. React handles the dynamic UI, while Node.js and Express manage secure API endpoints. MongoDB stores the time-locked data payloads.</p>
+            <a href="https://github.com/Sudhanshu1894" target="_blank" class="btn-primary">View Source Code</a>
+        </div>
+    </div>
+
+    <div id="mesh-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('mesh-modal')">&times;</span>
+            <h2>Disaster Management Mesh Network</h2>
+            <p><strong>Problem:</strong> Maintaining communication when traditional cellular infrastructure fails during disasters.</p>
+            <p><strong>Architecture:</strong> A Java-based implementation of a mesh network. It utilizes custom routing algorithms to dynamically connect nodes and extend communication range without a central router.</p>
+            <a href="https://github.com/Sudhanshu1894" target="_blank" class="btn-primary">View Source Code</a>
+        </div>
+    </div>
+
     <footer id="contact" class="footer-section">
         <div class="footer-content hidden">
             <h2>Let's build something together.</h2>
-            <p>Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!</p>
-            <a href="mailto:sudhanshusingh8232@gmail.com" class="btn-primary" style="margin-top: 2rem;">Say Hello</a>
+            <p>Whether you have a question, a project idea, or just want to say hi, my inbox is open!</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="d61fbbf2-5c22-4c28-9460-787c47790567">
+                
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; font-family: var(--font-heading); font-size: 1.1rem;">Send Message</button>
+            </form>
             
             <div class="social-links">
                 <a href="https://github.com/Sudhanshu1894" target="_blank" rel="noopener noreferrer">
                     <i class="devicon-github-original"></i>
                 </a>
-                
                 <a href="https://www.linkedin.com/in/sudhanshusingh8232/" target="_blank" rel="noopener noreferrer">
                     <i class="devicon-linkedin-plain"></i>
                 </a>
@@ -140,8 +185,23 @@
             <p>Designed & Built by Sudhanshu Singh © 2026</p>
         </div>
     </footer>
+
     <script>
-        // --- 1. Typing Effect Logic ---
+        // --- Mobile Hamburger Menu Logic ---
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        }));
+
+        // --- Typing Effect Logic ---
         const textArray = ["Full-Stack Web Development.", "AI & Robotics.", "Systems Architecture.", "UI/UX Design."];
         let textIndex = 0;
         let charIndex = 0;
@@ -173,7 +233,7 @@
             setTimeout(type, 1000);
         });
 
-        // --- 2. Scroll Reveal Observer Logic ---
+        // --- Scroll Reveal Observer Logic ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -184,6 +244,56 @@
 
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((el) => observer.observe(el));
+
+        // --- Project Modal Logic ---
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        // --- Particle.js Configuration ---
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#06B6D4" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": {
+                        "enable": true, "distance": 150, "color": "#06B6D4", "opacity": 0.3, "width": 1
+                    },
+                    "move": {
+                        "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": { "enable": true, "mode": "grab" },
+                        "onclick": { "enable": true, "mode": "push" },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                        "push": { "particles_nb": 4 }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
     </script>
 </body>
 </html>

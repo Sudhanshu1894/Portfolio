@@ -9,7 +9,7 @@
     --font-body: 'Inter', sans-serif;
 }
 
-/* --- Global Reset --- */
+/* --- Global Reset & Custom UI Polish --- */
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +27,28 @@ body {
 
 h1, h2, h3, .logo {
     font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--surface-color);
+    border-radius: 5px;
+    border: 1px solid var(--accent-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Custom Text Selection Highlight */
+::selection {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
 }
 
 /* --- Scroll Reveal Animation Classes --- */
@@ -106,7 +128,7 @@ h1, h2, h3, .logo {
     background-color: rgba(6, 182, 212, 0.1);
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section & Particles --- */
 .hero {
     height: 80vh;
     display: flex;
@@ -114,6 +136,21 @@ h1, h2, h3, .logo {
     justify-content: center;
     text-align: center;
     padding: 0 5%;
+    position: relative; /* Required for particle background */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0; 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Keeps text above the particles */
 }
 
 .hero h1 {
@@ -155,7 +192,8 @@ h1, h2, h3, .logo {
 .skills-section {
     padding: 2rem 5%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skills-container {
@@ -219,6 +257,7 @@ h1, h2, h3, .logo {
     margin-bottom: 2rem;
     border: 1px solid rgba(255,255,255,0.05);
     transition: transform 0.3s ease;
+    cursor: pointer; /* Indicates it can be clicked for the modal */
 }
 
 .project-card:hover {
@@ -237,6 +276,65 @@ h1, h2, h3, .logo {
     font-size: 0.85rem;
     margin-right: 0.5rem;
     display: inline-block;
+}
+
+/* --- Deep-Dive Modals --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.85); 
+    backdrop-filter: blur(8px);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    margin: 10% auto;
+    padding: 3rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 16px;
+    width: 80%;
+    max-width: 700px;
+    color: var(--text-primary);
+    box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    color: var(--text-secondary);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-content h2 { 
+    margin-bottom: 1.5rem; 
+    color: var(--accent-color); 
+}
+
+.modal-content p { 
+    margin-bottom: 1rem; 
+    color: var(--text-secondary); 
+}
+
+.modal-content .btn-primary { 
+    margin-top: 1.5rem; 
 }
 
 /* --- Leadership Section --- */
@@ -281,6 +379,7 @@ h1, h2, h3, .logo {
     margin-bottom: 1rem;
     font-weight: 600;
 }
+
 /* --- Terminal About Section --- */
 .about-section {
     padding: 5rem 5%;
@@ -297,7 +396,7 @@ h1, h2, h3, .logo {
 .terminal-window {
     width: 100%;
     max-width: 800px;
-    background-color: #0d1117; /* Darker background for terminal */
+    background-color: #0d1117; 
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -333,7 +432,7 @@ h1, h2, h3, .logo {
     color: var(--text-secondary);
     font-family: monospace;
     font-size: 0.9rem;
-    margin-right: 50px; /* Balances the buttons on the left */
+    margin-right: 50px; 
 }
 
 .terminal-body {
@@ -344,7 +443,7 @@ h1, h2, h3, .logo {
 }
 
 .prompt {
-    color: #27c93f; /* Terminal green */
+    color: #27c93f; 
     margin-right: 10px;
 }
 
@@ -407,4 +506,131 @@ h1, h2, h3, .logo {
     color: var(--text-secondary);
     font-size: 0.9rem;
     font-family: var(--font-heading);
+} 
+/* --- Working Contact Form Styles --- */
+.contact-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(30, 41, 59, 0.5); /* Semi-transparent surface */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+    background-color: var(--surface-color);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allows user to pull the text box down but not sideways */
+}
+
+/* --- Mobile Hamburger & Responsive Navigation --- */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 101; 
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.mobile-resume {
+    display: none; /* Hide duplicate resume button on desktop */
+}
+
+/* Mobile Layout Rules */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-resume {
+        display: none; /* Hide main resume button to save space */
+    }
+
+    .mobile-resume {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    /* The slide-out menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen to the right by default */
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 100;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* When active, slide it in */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Hamburger Animation to 'X' */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--accent-color);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--accent-color);
+    }
+
+    /* Adjust Hero Text for Phones */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    /* Adjust Terminal for Phones */
+    .terminal-title {
+        margin-right: 0;
+    }
 }
