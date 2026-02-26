@@ -1,104 +1,189 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width , initial-scale=1.0">
-<title>MY Portfolio </title>
-<link rel= "stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudhanshu Singh | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="navbar">
-    <div class="logo">Sudhanshu Kumar Singh</div>
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-<section class="hero">
-    <div class="hero-container">
-        <div class="hero-left">
-            <h1>Hi, I'm Sudhanshu </h1>
-            <p>Aspiring AI & Robotics Engineer passionate about building smart systems.</p>
-            <a href="#projects" class="hero-btn">View My Work</a>
-        </div>
-        <div class="hero-right">
-            <img src="Sudhanshu.webp" alt="Sudhanshu Photo">
-        </div>
-    </div>
-</section>
-<section class="about" id="about">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-                I'm a Computer Science student passionate about AI, robotics, and building smart systems.
-                I enjoy solving real-world problems using technology and constantly learning new skills.
-            </p>
-        </div>
 
-        <div class="about-info">
-            <ul>
-                <li><strong>College:</strong> VIT Chennai</li>
-                <li><strong>Branch:</strong> CSE (AI & Robotics)</li>
-                <li><strong>Interests:</strong> Robotics, AI, Coding</li>
-                <li><strong>Goal:</strong> Build intelligent systems</li>
-            </ul>
+    <nav class="navbar">
+        <div class="logo">&lt;Sudhanshu /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+        </ul>
+        <a href="Sudhanshu_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">Resume</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Sudhanshu Singh</span>.</h1>
+            <p class="typing-container">I specialize in <span id="typing-text" class="highlight"></span><span class="cursor">|</span></p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
         </div>
-    </div>
-</section>
-<section class="skills" id="skills">
-    <div class="skills-container">
-        <h2>My Skills</h2>
+    </section>
 
-        <div class="skills-grid">
-            <div class="skill-card">Python</div>
-            <div class="skill-card">C Programming</div>
-            <div class="skill-card">HTML & CSS</div>
-            <div class="skill-card">JavaScript (Learning)</div>
-            <div class="skill-card">Robotics</div>
-            <div class="skill-card">Problem Solving</div>
+    <section class="skills-section">
+        <div class="skills-container hidden">
+            <button class="tech-btn"><i class="devicon-react-original colored"></i><span>React</span></button>
+            <button class="tech-btn"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></button>
+            <button class="tech-btn"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></button>
+            <button class="tech-btn"><i class="devicon-express-original"></i><span>Express</span></button>
+            <button class="tech-btn"><i class="devicon-java-plain colored"></i><span>Java</span></button>
+            <button class="tech-btn"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></button>
+            <button class="tech-btn"><i class="devicon-figma-plain colored"></i><span>UI/UX</span></button>
         </div>
-    </div>
-</section>
-<section class="projects" id="projects">
-    <div class="projects-container">
-        <h2>My Projects</h2>
+    </section>
+    <section id="about" class="about-section">
+        <h2 class="hidden">System Status</h2>
+        <div class="terminal-window hidden">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+                <div class="terminal-title">sudhanshu@portfolio:~</div>
+            </div>
+            <div class="terminal-body">
+                <p><span class="prompt">sudhanshu@vit-chennai:~$</span> whoami</p>
+                <p class="output">Sudhanshu Singh. Computer Science Engineering student specializing in AI & Robotics.</p>
+                
+                <p><span class="prompt">sudhanshu@vit-chennai:~$</span> cat core_interests.txt</p>
+                <p class="output">Computer Architecture, Operating Systems, Data Structures, MERN Stack, Hardware Integration.</p>
 
-        <div class="projects-grid">
+                <p><span class="prompt">sudhanshu@vit-chennai:~$</span> ./execute_vision.sh</p>
+                <p class="output text-glow">"Bridging the gap between intelligent software and physical systems."</p>
+                
+                <p><span class="prompt">sudhanshu@vit-chennai:~$</span> <span class="cursor">|</span></p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects-section">
+        <h2 class="hidden">Featured Case Studies</h2>
+        
+        <div class="project-card hidden">
+            <div class="project-info">
+                <h3>Stasis</h3>
+                <p>A full-stack digital time-capsule application.</p>
+                <div class="tags">
+                    <span class="tag">MERN Stack</span>
+                    <span class="tag">Web Dev</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card reverse hidden">
+            <div class="project-info">
+                <h3>Disaster Management Mesh Network</h3>
+                <p>Java-based routing and range extension for emergency communication.</p>
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Systems Architecture</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-                <h3>Line Following Robot</h3>
-                <p>A robot that follows a path using IR sensors and microcontroller logic.</p>
-                <a href="#" class="project-btn">View Details</a>
+    <section id="experience" class="leadership-section">
+        <h2 class="hidden">Leadership & Community</h2>
+        <div class="leadership-grid">
+            
+            <div class="lead-card hidden">
+                <div class="lead-icon"><i class="devicon-microsoft-windows8-plain colored"></i></div>
+                <h3>Microsoft Innovations Club</h3>
+                <span class="lead-role">Active Member / Designer</span>
+                <p>Contributing to the club's visual presence by designing promotional materials, Instagram grids, and event collateral.</p>
             </div>
 
-            <div class="project-card">
-                <h3>Cache Simulator</h3>
-                <p>A computer architecture project simulating cache memory behavior.</p>
-                <a href="#" class="project-btn">View Details</a>
+            <div class="lead-card hidden">
+                <div class="lead-icon">🎲</div>
+                <h3>VITpoly Event Organizer</h3>
+                <span class="lead-role">Event Management</span>
+                <p>Conceptualized and organized a large-scale Monopoly-themed campus event, handling logistics, poster design, and team coordination.</p>
+            </div>
+
+            <div class="lead-card hidden">
+                <div class="lead-icon">🛠️</div>
+                <h3>Student Tool Development</h3>
+                <span class="lead-role">Developer</span>
+                <p>Built a comprehensive CGPA calculator tailored for university students to track current grades and forecast target milestones.</p>
             </div>
 
         </div>
-    </div>
-</section>
-<section class="contact" id="contact">
-    <div class="contact-container">
-        <h2>Get In Touch</h2>
-        <p>Feel free to reach out for collaborations or opportunities!</p>
-
-        <div class="contact-info">
-            <p><strong>Email:</strong> sudhanshusingh8232@gmail.com</p>
-            <p><strong>Location:</strong> Chennai, India</p>
+    </section>
+    <footer id="contact" class="footer-section">
+        <div class="footer-content hidden">
+            <h2>Let's build something together.</h2>
+            <p>Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!</p>
+            <a href="mailto:sudhanshusingh8232@gmail.com" class="btn-primary" style="margin-top: 2rem;">Say Hello</a>
+            
+            <div class="social-links">
+                <a href="https://github.com/Sudhanshu1894" target="_blank" rel="noopener noreferrer">
+                    <i class="devicon-github-original"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/sudhanshusingh8232/" target="_blank" rel="noopener noreferrer">
+                    <i class="devicon-linkedin-plain"></i>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
-<footer class="footer">
-    <p>© 2026 Sudhanshu Singh | Built with HTML & CSS</p>
-</footer>
+        <div class="footer-bottom">
+            <p>Designed & Built by Sudhanshu Singh © 2026</p>
+        </div>
+    </footer>
+    <script>
+        // --- 1. Typing Effect Logic ---
+        const textArray = ["Full-Stack Web Development.", "AI & Robotics.", "Systems Architecture.", "UI/UX Design."];
+        let textIndex = 0;
+        let charIndex = 0;
+        const typingElement = document.getElementById("typing-text");
 
+        function type() {
+            if (charIndex < textArray[textIndex].length) {
+                typingElement.textContent += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000); 
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                textIndex++;
+                if (textIndex >= textArray.length) textIndex = 0;
+                setTimeout(type, 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, 1000);
+        });
+
+        // --- 2. Scroll Reveal Observer Logic ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
-
-
